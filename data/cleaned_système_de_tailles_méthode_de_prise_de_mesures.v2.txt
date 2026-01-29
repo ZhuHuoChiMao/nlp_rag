@@ -1,0 +1,98 @@
+- 1) Correspondances de tailles (indicatives)
+1.1 Tailles lettres (XS/S/M/L/XL) — équivalence simplifiée
+- XS : EU/FR 34 | US 2 | CN 160/80A
+- S : EU/FR 36 | US 4 | CN 165/84A
+- M : EU/FR 38 | US 6 | CN 170/88A
+- L : EU/FR 40 | US 8 | CN 175/92A
+- XL : EU/FR 42 | US 10 | CN 180/96A
+- XXL: EU/FR 44 | US 12 | CN 185/100A
+
+NOTE: s CN :
+- Le format CN “170/88A” signifie généralement : taille (cm) / tour de poitrine (cm) / morphologie (A standard).
+- Les correspondances CN peuvent varier selon fabricant (A/B/C, etc.).
+
+1.2 Pantalons (tailles jeans US “W” en pouces) — conversion rapide
+- W28 ≈ FR 36 (EU 36)
+- W29 ≈ FR 36–38
+- W30 ≈ FR 38
+- W31 ≈ FR 40
+- W32 ≈ FR 40–42
+- W33 ≈ FR 42
+- W34 ≈ FR 44
+- W36 ≈ FR 46
+
+Astuce
+- 1 pouce = 2,54 cm
+- W (waist) correspond au tour de taille en pouces (approx.).
+- La longueur (L) ex. L30/L32 = entrejambe en pouces.
+
+- 2) Comment mesurer (méthode standard)
+Outils : un mètre ruban souple, un miroir, idéalement une seconde personne.
+TIP: mesurez sur sous-vêtements ou vêtements très fins, sans serrer le ruban. Notez les valeurs en cm.
+
+2.1 Tour de poitrine (Poitrine / Bust)
+- Position : ruban horizontal, au niveau le plus fort de la poitrine.
+- Points : passer sous les aisselles, dans le dos bien à plat.
+- Ne pas : serrer trop fort (doit rester confortable).
+
+2.2 Tour de taille (Taille / Waist)
+- Position : la taille naturelle (souvent la partie la plus creuse au-dessus du nombril).
+- Astuce : penchez-vous sur le côté, le pli naturel indique la taille.
+- Ruban horizontal, respiration normale.
+
+2.3 Tour de hanches (Hanches / Hips)
+- Position : au niveau le plus fort des hanches/fesses.
+- Ruban horizontal, pieds joints, sans serrer.
+
+2.4 Largeur d’épaules (Épaules / Shoulder width)
+
+A) Sur le corps
+- Mesurer d’une pointe d’épaule à l’autre (os de l’épaule), ruban tendu mais pas serré.
+
+B) Sur un vêtement qui vous va bien (recommandé)
+- Poser à plat une veste/chemise.
+- Mesurer la distance entre les coutures d’épaule (épaule à épaule).
+
+2.5 Longueur de pantalon (2 mesures utiles)
+
+A) Longueur extérieure (Outseam)
+- Du haut de la ceinture (côté) jusqu’au bas de la jambe.
+
+B) Entrejambe (Inseam) (souvent la plus utilisée)
+- De l’entrejambe (jonction des coutures) jusqu’au bas de la jambe.
+
+Astuce
+- Pour les jeans US, le “L” correspond généralement à l’entrejambe en pouces (ex. L32 ≈ 81 cm).
+
+- 3) Comment choisir sa taille (règles simples)
+- Comparez d’abord vos mesures (cm) au tableau du produit.
+- Si vous êtes entre deux tailles :
+- Vous préférez ajusté : choisir la plus petite (sauf matière non extensible).
+- Vous préférez confortable : choisir la plus grande.
+- Matière extensible (avec élasthanne) : peut tailler plus “tolérant”.
+- Coupe oversize : taille volontairement grand ; suivez la recommandation produit.
+
+- 4) Conseils par type de vêtement
+4.1 Hauts/chemises
+- Priorité : tour de poitrine + largeur d’épaules.
+- Si épaules larges : privilégier la mesure épaules.
+
+4.2 Vestes/manteaux
+- Tenir compte d’une marge pour un pull en dessous.
+- Vérifier : poitrine + épaules + longueur de manches (si fournie).
+
+4.3 Pantalons
+- Priorité : tour de taille + tour de hanches + entrejambe.
+- Pour tailles jeans US : choisir W proche de votre tour de taille (cm / 2,54).
+
+- 5) Tolérance & variations
+- Tolérance de fabrication/mesure : ±1 à 3 cm.
+- Couleur/coupe/lot de production : légères variations possibles.
+- Les tailles EU/FR/US/CN ne sont pas strictement uniformes entre marques : utilisez toujours le tableau du produit quand disponible.
+
+- 6) FAQ (réponses rapides)
+Q : Je fais du M en France, que dois-je prendre en CN ? R : En général, M ≈ 170/88A, mais cela varie. Comparez surtout vos mesures (poitrine/taille/hanches) au tableau du produit.
+
+Q : Comment convertir US W32 en taille FR ? R : W32 correspond souvent à FR 40–42, mais vérifiez votre tour de taille en cm : 32 pouces ≈ 81 cm.
+
+Q : La mesure du produit est-elle celle du corps ? R : Selon les boutiques, le tableau peut être “mesures du corps” ou “mesures du vêtement”. Lisez la mention du tableau. En cas de doute, demandez au service client en précisant vos mesures.

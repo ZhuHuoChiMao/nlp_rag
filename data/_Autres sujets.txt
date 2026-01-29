@@ -1,0 +1,114 @@
+﻿Envoyer un cadeau
+Pour envoyer une commande en tant que cadeau :
+Sélectionnez Ajouter au panier sur la page de détails de l'article.
+Cochez la case Ceci sera un cadeau.
+Sélectionnez Passer la commande.
+Sélectionnez une adresse d'expédition dans la liste ou ajoutez-en une nouvelle.
+Sélectionnez Choisir des options cadeau.
+L'option Cacher les prix sur le bordereau d'expédition pour cet achat sera sélectionnée automatiquement.
+Ajouter un message cadeau gratuitement. Vous pouvez modifier le message cadeau après avoir passé la commande, tant que celle-ci n'est pas en cours de livraison.
+Emballer l'article dans un emballage cadeau.
+Envoyez un reçu du cadeau par e-mail au destinataire après la livraison (cela donne également au destinataire la possibilité de déballer numériquement son cadeau une fois qu'il a été livré).
+Si aucune option cadeau n'est disponible, une notification vous en informe.
+Sélectionnez Enregistrer les options cadeau et continuer.
+Remarque :
+Vous pouvez ajouter ou modifier des options cadeau après avoir passé la commande, tant que celle-ci n'est pas en cours d'expédition. Pour ce faire, accédez à Vos commandes et sélectionnez Afficher ou modifier la commande.
+Livraisons d’Amazon Logistics
+
+
+Conseil :
+Ligne d’urgence en cas d’incident sur la route
+La sécurité est la priorité absolue d'Amazon. Bien que la plupart des livraisons se déroulent sans encombre, nous sommes prêts à vous aider en cas d'accident impliquant un livreur Amazon. Si vous êtes témoin ou victime d'un grave accident de la route impliquant un livreur, veuillez
+Assurer votre propre sécurité.
+Appelez le 112 si la police ou les services médicaux d’urgence doivent intervenir.
+Contactez-nous pour signaler l’incident à Amazon. Suivez les instructions jusqu’à ce que vous ayez la possibilité de parler à un agent et de signaler votre problème par téléphone.
+	Amazon Logistics travaille avec des partenaires de livraison Amazon locaux et régionaux à travers le pays pour livrer les colis Amazon aux clients 7 jours sur 7. Le service Amazon Logistics complète notre vaste réseau actuel de partenaires de livraison nationaux et fournit une capacité supplémentaire alors que de plus en plus de clients bénéficient des avantages de la livraison en un jour d’Amazon Prime.
+Suivi de votre commande
+Vous pouvez suivre votre commande Amazon sur la page Vos commandes, qui affiche les informations fournies par nos partenaires de livraison. Si vous avez besoin d’une assistance supplémentaire pour suivre votre colis, veuillez consulter la page Suivre votre colis.
+Informations sur la livraison
+Amazon Logistics n’exige pas toujours que le client soit présent pour livrer les colis. Le livreur placera le colis dans votre boîte aux lettres, si possible. Dans le cas contraire, il le laissera dans un endroit sécurisé ou dans l’emplacement sûr de votre choix. Cette approche sans contact permet de garantir des livraisons plus rapides en éliminant le besoin d’effectuer plusieurs tentatives de livraison, tout en vous permettant de récupérer vos colis à votre convenance. Pour plus de sécurité, les livreurs prennent une photo de l’endroit où le colis a été laissé, qui vous est envoyée par e-mail et visible dans le suivi de votre commande.
+Les livraisons peuvent avoir lieu entre 6 h et 21 h, heure locale.
+Certaines livraisons peuvent nécessiter la présence d’une personne. C’est le cas lorsqu’un mot de passe à usage unique est associé à votre commande ou s’il s’agit d’une commande pour laquelle nous devons vérifier votre âge. Afin d’éviter de vous déranger, le livreur peut frapper ou sonner à votre porte, ou vous contacter directement pour toute livraison uniquement entre 8 h et 20 h (heure locale), sauf si votre livraison est prévue dans un créneau spécifique.
+Concernant ce type de livraison, le livreur peut vous appeler ou envoyer un SMS au numéro de téléphone que vous avez indiqué pour votre commande. Le numéro à l’origine de l’appel ou du SMS serait le +33187217777. Il ne doit pas tenter de livrer le colis en dehors de la plage horaire 8 h-20 h, sauf s’il vous a contacté au préalable.
+En l’absence d’endroit sécurisé pour déposer le colis ou si personne n’était disponible pour recevoir la livraison si c’était nécessaire, Amazon enverra un e-mail à l’adresse e-mail enregistrée. Vous pouvez sélectionner la date de la nouvelle livraison en cliquant sur le bouton Suivre votre colis à côté de la commande concernée dans Vos Commandes. Si votre commande est éligible à une nouvelle livraison, cliquez sur le lien Demander une replanification.
+Si nécessaire, au moins cinq tentatives de livraison seront effectuées à des dates consécutives. Si la cinquième échoue, votre colis sera renvoyé à Amazon et vous serez remboursé(e).
+Vous pouvez spécifier votre endroit sécurisé préféré via Votre compte.
+Sélectionnez Vos adresses.
+Choisissez l’adresse à mettre à jour.
+Sélectionnez Ajouter des instructions de livraison.
+Les endroits sécurisés courants incluent :
+derrière des pots de fleurs ;
+sur un porche ;
+dans un garage ;
+derrière un portail.
+Rechercher un colis manquant
+Vous pouvez parfois constater que le suivi indique qu'un colis a été livré, alors que vous ne l'avez pas reçu. Dans ces cas, vérifiez si le colis a été laissé chez le concierge ou chez un voisin. Pour en savoir plus, consultez l’article Rechercher un colis manquant qui apparaît comme livré. Si vous avez vérifié ces possibilités et que vous ne pouvez toujours pas localiser votre colis, veuillez nous contacter. Nous serons ravis d’examiner votre situation.
+Codes d’accès et instructions de livraison
+Si vous souhaitez donner des instructions au livreur, comme des indications sur l’adresse ou un endroit sécurisé pour votre colis, vous pouvez les saisir au moment de passer la commande ou les ajouter via Votre compte. Sélectionnez Suivre l’article pour la commande en question dans Vos commandes. Sélectionnez ensuite Fournir des instructions de livraison sur la page Suivi de la progression.
+Pour gérer les instructions de livraison pour les prochaines commandes :
+Accédez à Votre compte.
+Trouvez Vos adresses.
+Choisissez l’adresse à mettre à jour.
+Sélectionnez Ajouter des instructions de livraison.
+Vous pouvez ajouter des informations utiles telles que :
+S’il s’agit d’une adresse personnelle ou professionnelle
+Votre numéro d’interphone
+Tous les codes dont nous avons besoin pour entrer
+Une fois ces modifications enregistrées, nous utiliserons ces informations pour les nouvelles commandes envoyées à cette adresse.
+Préférence de livraison le week-end
+Lorsque vous ajoutez une nouvelle adresse, vous pouvez choisir si vous souhaitez recevoir des livraisons le week-end. Pour cela, mettez à jour l’option « Cette adresse est-elle fermée aux livraisons le samedi et le dimanche ? » dans Vos adresses.
+Service client
+Le service client Amazon gère toutes les demandes concernant les colis expédiés par un partenaire de livraison.
+Si vous avez des questions, contactez le service client Amazon.
+
+
+Livraison sécurisée avec mot de passe à usage unique
+Le mot de passe à usage unique ajoute un niveau de sécurité supplémentaire pour vos colis.
+Si votre livraison nécessite un mot de passe à usage unique, vous trouverez un message sur la page de paiement, au moment de passer la commande.
+Si un mot de passe à usage unique est requis, nous enverrons un code à six chiffres à la méthode de contact que vous avez enregistrée. Le mot de passe à usage unique sera envoyé le jour de la livraison lorsque l’état de votre colis indiquera En cours de livraison.
+Vérifiez également que l'e-mail ne se trouve pas dans votre dossier d’e-mails indésirables.
+Lorsque le statut de votre colis est mis à jour avec le message En cours de livraison, vous pouvez également trouver le mot de passe à usage unique :
+en sélectionnant Suivre le colis à côté de la commande dans Vos commandes le jour de la livraison ;
+en accédant au « Centre de messagerie » et en ouvrant le message contenant votre mot de passe à usage unique ;
+en vérifiant vos e-mails, SMS ou messages WhatsApp enregistrés.
+Partagez le mot de passe à usage unique avec le livreur en personne uniquement. Ne le partagez pas par téléphone ou par interphone.
+Remarque :
+Si vous ne pouvez pas recevoir le colis vous-même, vous pouvez partager le mot de passe à usage unique avec une autre personne qui pourra accepter le colis en votre nom. Nous vous recommandons de ne jamais communiquer ce mot de passe à usage unique à un inconnu.
+Votre mot de passe à usage unique est valide jusqu’à la fin du jour de livraison. Si notre première livraison échoue, nous essaierons de livrer à nouveau votre colis le jour ouvrable suivant. Vous recevrez un nouveau mot de passe à usage unique le jour de la livraison lorsque votre colis sera En cours de livraison.
+Si vous n'êtes pas disponible pour accepter la livraison, demandez une nouvelle livraison lorsque vous ou le destinataire de votre choix serez disponible.
+Les livreurs ne peuvent pas laisser les colis sans surveillance à l’adresse de livraison qui nécessite un mot de passe à usage unique.
+Si vous n'êtes pas le destinataire, transférez le mot de passe à usage unique à la personne qui le recevra. Conseillez-leur de consulter ces directives.
+Frais et heures de livraison en point de retrait
+Remarque : Veuillez noter que les articles Marketplace ne peuvent pas être livrés en point de retrait.
+* Livraison standard
+* Livraison prioritaire
+* Livraison le jour même
+* Comment bénéficier de la livraison en point de retrait
+Livraison standard
+Le délai de livraison standard en point de retrait est de deux à cinq jours ouvrables.
+La livraison standard effectuée en point de retrait est gratuite pour tous les articles éligibles sans minimum d'achat, à l'exception des commandes incluant des livres neufs pour lesquelles les frais de livraison suivants s'appliquent :
+3€ pour une commande contenant moins de 35 € de livres neufs.
+0,01€ pour une commande contenant 35 € ou plus de livres neufs.
+Ceci s'applique à tous les clients Amazon, qu'ils soient membre Prime ou non. Des exemptions permettant aux clients de récupérer gratuitement leurs livres dans des points de retrait spécifiques s'appliquent. Pour plus de détails, veuillez consulter la page d'aide Frais de livraison applicables aux commandes contenant des livres neufs en France.
+Livraison prioritaire
+La livraison prioritaire en point de retrait prend un à trois jours ouvrables. Pour les commandes passées du lundi au vendredi, la livraison a lieu le jour ouvrable suivant.
+Les frais de livraison prioritaire en point de retrait, à l'exclusion d'Amazon Prime, sont de 3,99 € par envoi pour tous les articles éligibles.
+Avec Amazon Prime , la livraison est gratuite sans minimum d'achat, à l'exclusion des commandes contenant un ou plusieurs livres neufs, pour lesquelles les frais de livraison suivants s'appliquent :
+3€ pour une commande contenant moins de 35 € de livres neufs.
+0,01 € pour une commande contenant 35 € ou plus de livres neufs.
+Des exemptions permettant aux membres Prime de récupérer gratuitement leurs livres dans des points de retrait spécifiques utilisant la livraison prioritaire s'appliquent. Pour plus de détails, veuillez consulter la page d'aide Frais de livraison applicables aux commandes contenant des livres neufs en France
+Livraison le jour même en point de retrait Amazon Locker à Paris, Région parisienne (Codes postaux éligibles), Lille, Lyon, Marseille et Aix-en-Provence
+Pour que votre commande soit livrée le soir même entre 19 h et 20 h, du lundi au dimanche, jours fériés inclus (sauf dimanche et jours fériés pour les livraisons à Lille), vous devez la valider avant la date limite. La date limite est spécifiée sur la page des détails de l'article et sur la page de vérification et de validation de votre commande. Une fois le délai écoulé, la livraison le soir même sera disponible à nouveau le lendemain, jusqu'à la date limite indiquée sur la page des détails de l'article.
+Les frais de livraison le jour même en point de retrait Amazon Locker sont de 9,99 € par envoi pour tous les articles éligibles.
+Avec Amazon Prime, les frais de livraison le jour même en point de retrait sont de 3,99€ par envoi pour tous les articles éligibles.
+Remarque : Les prix ci-dessus concernent les articles expédiés par Amazon et peuvent varier pour les articles proposés et expédiés par des vendeurs Marketplace tiers.
+Comment bénéficier de la livraison en point de retrait
+Si vos articles et votre adresse sont éligibles pour une livraison à un point de retrait, nous vous proposons cette option lors de votre commande. Découvrez comment passer une commande pour la livrer à un point de retrait.
+Si vous sélectionnez l'un des articles soumis à des restrictions, un message d'erreur s'affiche lorsque vous passez une commande. Retirez ces articles de votre panier pour valider votre commande ou sélectionnez une autre adresse de livraison.
+Si vous avez sélectionné l'option de retrait « via un code de retrait » lorsque vous avez passé votre commande, vous, ou une personne de votre choix, devez utiliser le code de retrait au point de retrait pour récupérer le colis.
+Expédié par Amazon
+Tous les tarifs et politiques d'expédition standard Amazon s'appliquent à ces articles lorsqu'ils sont expédiés au sein du pays, y compris la livraison gratuite pour les commandes admissibles et la livraison avec Prime. La livraison internationale peut ne pas être disponible pour tous les articles.
+Lorsque nous expédions votre commande, nous indiquons le transporteur, la date d'expédition et la date de livraison prévue de votre colis dans Votre compteet dans votre courriel de confirmation d'expédition. Vous pouvez suivre votre colis dans Vos commandes.
+Nous prenons également en charge tout le service clients et les retours de produits pour les articles expédiés par Amazon.
+Les commandes contenant des articles FBA proposés par des vendeurs tiers peuvent être livrées en France métropolitaine et à Monaco et dans les pays de destination pris en charge par l'export « Expédié par Amazon ». Le vendeur, à sa discrétion, décide s'il prend en charge ou non l'export Expédié par Amazon. Actuellement, seuls les articles multimédias (livres, musique, DVD et jeux vidéo) peuvent être livrés en dehors de l'UE.
+Si vous avez besoin de retourner un article FBA, visitez notre centre de retours pour obtenir une étiquette de retour et une autorisation d'expédition de retour. Pour plus d'informations, consultez la page Retourner un article que vous avez commandé.

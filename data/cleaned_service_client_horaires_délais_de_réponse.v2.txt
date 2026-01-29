@@ -1,0 +1,79 @@
+- 1) Horaires du service client (par défaut)
+- Jours : du lundi au vendredi
+- Horaires : 09:00 – 18:00 (heure de Paris)
+- Fermeture : week-ends et jours fériés (sauf annonce exceptionnelle)
+
+NOTE: les messages envoyés hors horaires sont enregistrés et traités à la reprise du service.
+
+- 2) Canaux de contact pris en charge
+- Messagerie de la plateforme / chat (prioritaire)
+- E-mail (si fourni par la boutique)
+- Formulaire de contact (si disponible)
+
+NOTE: pour accélérer le traitement, privilégiez la messagerie liée à la commande.
+
+- 3) Priorités de traitement (tri des demandes)
+
+P0 — Urgent (priorité maximale)
+- Erreur d’envoi, manquant/quantité insuffisante, colis endommagé à l’arrivée
+- Modification d’adresse / annulation (avant expédition)
+- Problème de livraison critique (adresse invalide, colis bloqué)
+
+P1 — Standard
+- Demandes d’échange/retour, questions de taille, suivi commande, facture
+
+P2 — Information / conseil
+- Questions produit, entretien, disponibilité, recommandations
+
+- 4) SLA : délai de première réponse (engagement)
+- P0 (Urgent) : première réponse sous 4 heures ouvrées
+- P1 (Standard) : première réponse sous 24 heures ouvrées
+- P2 (Conseil) : première réponse sous 48 heures ouvrées
+
+Notes
+- “Heures ouvrées” = dans les horaires du service client.
+- En période de forte activité (soldes, fêtes), les délais peuvent être légèrement allongés ; nous l’indiquerons si nécessaire.
+
+- 5) SLA : délai de résolution (objectif)
+Les délais ci-dessous sont des objectifs moyens après réception de toutes les informations nécessaires :
+
+5.1 Suivi et information
+- Mise à jour de suivi / clarification : 1 jour ouvré
+
+5.2 Modification d’adresse / annulation
+- Si commande non préparée : traitement le jour même (objectif)
+- Si en préparation : tentative de blocage sous 1 jour ouvré (sans garantie)
+
+5.3 Erreur d’envoi / manquant / quantité insuffisante
+- Analyse + décision : 1 jour ouvré après réception des preuves
+- Réexpédition (si confirmée) : 1 à 3 jours ouvrés (selon entrepôt) + délai transporteur
+
+5.4 Échange
+- Validation de l’échange : 1 jour ouvré après réception des preuves
+- Après réception du retour : contrôle 1 à 3 jours ouvrés
+- Expédition de l’échange : 1 à 3 jours ouvrés après contrôle (si stock)
+
+5.5 Retour & remboursement
+- Après réception du retour : contrôle 1 à 3 jours ouvrés
+- Remboursement initié : 1 à 2 jours ouvrés après contrôle conforme
+- Délai d’apparition des fonds : 1 à 7 jours ouvrés selon le moyen de paiement / plateforme
+
+- 6) Informations à fournir pour accélérer (checklist)
+
+Merci d’inclure dès le premier message
+- Numéro de commande
+- Sujet clair (ex. “MANQUANT”, “ERREUR TAILLE”, “ANNULATION URGENTE”)
+- Photos/vidéo si nécessaire (étiquette transporteur, article, défaut, ouverture)
+- Coordonnées de livraison (si modification demandée)
+
+- 7) Engagement qualité & transparence
+- Si des informations manquent, nous vous le dirons clairement (liste des éléments à fournir).
+- Si une solution nécessite un retour/contrôle, nous expliquerons les étapes et les délais.
+- Nous privilégions une solution simple : réexpédition/échange en priorité quand cela résout plus vite le problème.
+
+- 8) FAQ (réponses rapides)
+Q : Quand répond le service client ? R : Du lundi au vendredi, 09:00–18:00 (heure de Paris). Hors horaires, nous répondons dès la reprise.
+
+Q : Quel est votre délai de réponse ? R : Urgent (erreur/manquant/défaut à l’arrivée) : sous 4 heures ouvrées. Sinon : sous 24 heures ouvrées (standard) ou 48 heures ouvrées (conseil).
+
+Q : Pourquoi ma demande prend plus de temps ? R : Le plus souvent, il manque des preuves (photos/vidéo) ou nous attendons une vérification entrepôt/transporteur. Envoyez le numéro de commande et les preuves dès le premier message pour accélérer.

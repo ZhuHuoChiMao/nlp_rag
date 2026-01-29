@@ -1,0 +1,162 @@
+﻿Demander un remboursement au titre de la Garantie A à Z
+Demandez le remboursement de votre article :
+Accédez à Vos commandes.
+Localisez la commande.
+Sélectionnez Problème avec la commande.
+Sélectionnez le problème rencontré dans la liste.
+Sélectionnez Demander un remboursement.
+Saisissez vos commentaires dans la zone de texte.
+Sélectionnez Soumettre.
+Consultez le statut de votre demande :
+Accédez à Vos commandes.
+Localisez la commande.
+Sélectionnez Problème avec la commande.
+Consultez le statut de votre demande.
+L'analyse des demandes peut nous prendre jusqu'à une semaine. Nous vous informerons de notre décision en utilisant l'adresse e-mail associée à votre compte.
+
+
+Informations sur notre Marketplace
+Les vendeurs tiers sur notre Marketplace
+Les vendeurs Marketplace sont des vendeurs indépendants, professionnels ou consommateurs, qui offrent une sélection de produits à l'état neuf, d'occasion, reconditionné et de collection.
+Amazon Services Europe et ses sociétés affiliées (Amazon) permettent à des vendeurs tiers de lister et de vendre leurs produits sur Amazon.fr. En raison de la réglementation, Amazon demande aux vendeurs tiers de fournir certaines informations avant qu'ils puissent vendre sur les sites européens d'Amazon. Les privilèges de vendeur peuvent être révoqués pour les raisons suivantes :
+Performance faible (taux de commandes défectueuses élevé, taux d'annulations de commandes élevé, ou taux d'expéditions en retard élevé).
+Violations de nos politiques de vente.
+Violation des règles relatives au contenu prohibé.
+Bien qu'Amazon, en tant qu'hébergeur, facilite les transactions réalisées sur la place de marché (ou Marketplace) d'Amazon, Amazon n'est ni l'acheteur ni le vendeur des produits des vendeurs tiers. Amazon fournit un lieu de rencontre dans lequel les acheteurs et vendeurs complètent et finalisent leurs transactions. En conséquence, pour la vente de ces produits de vendeurs tiers, un contrat de vente est formé uniquement entre l'acheteur et le vendeur tiers. Amazon n'est pas partie à un tel contrat et n'assume aucune responsabilité ayant pour origine un tel contrat ou découlant de ce contrat de vente. Amazon n'est ni l'agent ni le mandataire des vendeurs tiers.
+Le vendeur tiers est responsable des ventes de produits et des réclamations ou tout autre problème survenant ou lié au contrat de vente entre lui et l'acheteur. Tout litige relatif à l'achat d'un produit auprès d'un vendeur tiers devra être résolu directement entre l'acheteur et ce vendeur tiers. Néanmoins, pour les articles vendus par des tiers mais expédiés par Amazon, Amazon prend en charge le service clients et traite les retours. Pour en savoir plus, en particulier concernant les modalités de règlement des conflits dans ces cas particuliers, consultez A propos du programme Expédié par Amazon. De plus, pour les achats d'articles vendus et expédiés par un vendeur tiers, Amazon offre la Garantie A à Z en plus de tout droit contractuel ou autre. Pour en savoir plus, en particulier concernant les modalités de règlement des conflits dans ces cas particuliers, consultez A propos de la Garantie A à Z.
+Afin de vous fournir des informations claires et transparentes concernant les vendeurs tiers sur Amazon Marketplace, nous vous communiquons les liens vers les pages d'aide suivantes :
+A propos de la page du vendeur
+Contacter un vendeur Marketplace
+Acheter à un vendeur Marketplace : vos garanties
+À propos de la Garantie A à Z
+Le Gestionnaire de communication entre acheteurs et vendeurs
+Achats sur la Marketplace
+Le prix total du bien proposé à la vente est indiqué lors de la confirmation de la commande. Aucun frais supplémentaire n'est mis à la charge des clients.
+Amazon Marketplace est sûr et fournit aux acheteurs un mode de paiement très pratique. Amazon Marketplace est le seul mode de paiement autorisé et reconnu pour les achats sur la Marketplace. Les vendeurs sur Marketplace doivent utiliser Amazon Marketplace uniquement pour effectuer leurs transactions.
+Les étapes pour passer commande auprès d'un vendeur Marketplace sont identiques à celles d'une commande pour un article vendu par Amazon. Le règlement de cette commande pourra être effectuée immédiatement ou lors de l'expédition de la commande via le processus de commande et le système de paiement sécurisé d'Amazon.fr. De ce fait, il n'est pas nécessaire de transmettre vos coordonnées bancaires ou votre numéro de carte de paiement à votre vendeur, ces informations étant strictement confidentielles et cryptées par notre serveur sécurisé.
+Nous utilisons une technologie performante : un serveur sécurisé TLS (anciennement SSL) qui assure la fiabilité de notre commerce en ligne. Ce logiciel crypte toutes vos données personnelles indispensables au traitement de vos commandes (nom, adresse, coordonnées bancaires) au moment de leur saisie. Au cours de leur unique transfert via Internet, il est alors impossible de les lire.
+Afin de vous fournir des informations claires et transparentes concernant les commandes passées sur Amazon, nous vous communiquons les liens vers les pages d'aide suivantes :
+A propos des commandes auprès de vendeurs Marketplace
+A propos des articles sur la Marketplace Amazon.fr
+A propos de notre serveur sécurisé
+A propos de la sécurité des transactions sur Amazon.fr
+Options de tri
+Lorsque vous effectuez des achats sur Amazon, nous souhaitons vous aider à trouver facilement des articles que vous voudrez acheter, que vous sachiez exactement ce que vous voulez ou que vous ayez besoin d'aide.
+« Amazon présente » : Nous prenons en compte plusieurs facteurs lors de la sélection des résultats présentés, notamment les actions des nos clients (par exemple, la fréquence à laquelle un article a été acheté), les informations relatives à l'article (comme le titre, le prix et la description), la disponibilité, les coûts (par exemple, les coûts d'expédition) et si nous pensons que l'article présente un intérêt (comme les nouveaux articles).
+D'autres options de tri disponibles sur Amazon sont les suivantes:
+« Évaluation moyenne des clients » trie les articles en fonction des évaluations des clients, notamment le nombre moyen d'étoiles sur 5 étoiles attribuées par les clients et le nombre de commentaires clients pour chaque résultat.
+« Dernières nouveautés » trie les articles en fonction de leur première date de disponibilité sur Amazon.
+« Prix: par ordre décroissant » trie les articles en fonction de leur prix avec l'article au prix le plus élevé en premier et celui au prix le plus bas en dernier.
+« Prix: par ordre croissant » trie les articles en fonction de leur prix avec l'article au prix le plus bas en premier et celui au prix le plus élevé en dernier.
+Afin de vous fournir des informations claires et transparentes concernant les critères de classement sur les pages de résultats, nous vous communiquons les liens vers les pages d'aide suivantes :
+Chercher un article
+A propos des évaluations et des classements
+Laisser une évaluation à un vendeur Marketplace.
+
+
+Gérer vos adhésions avec les abonnements Amazon
+Dans Vos abonnements et adhésions, vous verrez une liste de vos abonnements actifs, annulés et expirés. Vous y verrez également des informations concernant vos abonnements, y compris la date de renouvellement et le prix.
+Sélectionnez Gérer l'abonnement pour modifier vos données de facturation et de livraison ou pour annuler un renouvellement.
+Pour afficher ou gérer d'autres types d'abonnements, tels que les abonnements logiciels ou Prévoyez et Économisez, cliquez sur le lien correspondant à l'abonnement concerné dans la section Vous ne voyez pas votre abonnement ? en bas de Vos abonnements et adhésions.
+Qu'est-ce que la Garantie A à Z
+La Garantie A à Z est une garantie commerciale gratuite proposée par Amazon E.U S.à.r.l qui vous protège lorsque vous achetez des articles vendus et expédiés par un vendeur tiers qui vous fournit directement son propre service client. Cette garantie commerciale vient s’ajouter aux garanties légales que vous pouvez invoquer à l’égard du vendeur tiers. Elle couvre à la fois l'état de vos articles et leur livraison dans les délais annoncés. Si l’un de ces deux services n’était pas satisfaisant, vous pouvez nous signaler le problème et notre équipe déterminera si vous êtes éligible à un remboursement dans le cadre de la Garantie A à Z.
+Passez à la section
+* Vérifier votre éligibilité à une demande de remboursement au titre de la Garantie A à Z
+* Conditions éligibles
+* Remarques relatives à la Garantie A à Z
+Vérifier votre éligibilité à une demande de remboursement au titre de la Garantie A à Z
+Vous pouvez demander un remboursement au titre de la Garantie A à Z si les conditions suivantes sont remplies :
+* Vous avez commandé auprès d’un vendeur Marketplace et votre commande a été expédiée par ce vendeur
+* ET la dernière date de livraison possible de votre commande n’excède pas 90 jours
+* ET au moins l’une des conditions énumérées ci-dessous s’applique :
+Conditions éligibles
+Vous n’avez pas reçu votre colis
+Trois jours se sont écoulés depuis la dernière date de livraison estimée OU le suivi indique une confirmation de livraison, selon la première de ces deux dates.
+ET vous avez déjà contacté le vendeur du Marketplace il y a plus de 48 heures, mais il n’a pas répondu ni résolu le problème de manière satisfaisante.
+L’article que vous avez reçu est endommagé, défectueux ou ne correspond pas à sa description sur le site Web
+ET vous avez demandé un retour il y a plus de 48 heures et le vendeur n’a pas autorisé votre demande de retour ou n’a pas résolu le problème de manière satisfaisante.
+Vous vouliez retourner un article que vous avez acheté à un vendeur international, mais celui-ci n’a fourni aucun des éléments suivants :
+une adresse de retour en France ;
+une étiquette de retour prépayée à leurs frais (pour les produits éligibles à un retour gratuit) pendant la période de retour de 30 jours, quel que soit le motif du retour, si l'adresse de retour n'était pas en France ;
+le remboursement complet de l'article sans demander le retour de celui-ci.
+Si la demande de retour a été autorisée avec une adresse de retour internationale, vous devez accorder au vendeur un délai de 48 heures à compter de la date de la demande de retour pour vous proposer l’une de ces méthodes avant que vous puissiez demander un remboursement dans le cadre de la Garantie A à Z.
+Vous vouliez retourner un article, mais la demande de retour était (a) fermée/non autorisée par le vendeur, sans remboursement, (b) autorisée, mais l'étiquette de retour prépayée comportait un numéro de suivi non valide.
+Vous avez renvoyé un article à un vendeur tiers conformément à la politique de retours applicable aux achats auprès de vendeurs tiers, mais vous n'avez pas reçu le remboursement attendu.
+Vous pouvez demander un remboursement si les conditions suivantes sont remplies :
+Sept jours se sont écoulés depuis que le retour a été remis au vendeur.
+L’article a été renvoyé en utilisant l’étiquette de retour prépayée fournie par le vendeur dans la demande de retour, mais le retour s’est perdu en cours de route, n’a pas pu être livré ou vous a été renvoyé.
+Le montant du remboursement que vous êtes en droit de recevoir de la part d'un vendeur Marketplace est indiqué dans le tableau ci-dessous, si vous :
+demandez un retour dans les 30 jours suivant la date de livraison de l’article (ou avant la fin de la période de retour prolongée pour les commandes passées pendant la période de Noël).
+avez renvoyé l'article dans les 14 jours suivant la date à laquelle vous avez convenu du retour avec le vendeur (le cachet de la poste faisant foi).
+Vous rencontrez un problème avec le produit (article endommagé, ne correspond pas à la description fournie par le vendeur ou ne fonctionne pas) : vous bénéficiez des garanties légales pendant deux ans (en savoir plus sur les garanties légales et les garanties commerciales d’Amazon).Remboursement du prix du produit par des vendeurs tiers Oui.Remboursement des frais de livraison par des vendeurs tiers Oui.Remboursement des frais de retour par des vendeurs tiers Oui.Vous demandez un retour pour tout autre motif (par exemple, vous avez changé d'avis, vous avez acheté la mauvaise taille). Dans les 14 jours suivant la réception : vous bénéficiez du droit légal de rétractation.Oui, à condition que l'article soit retourné dans le même état que lorsque vous l'avez reçu.Remboursement des frais de livraison par des vendeurs tiers Oui.Non, sauf pour les articles des catégories Mode, pour les retours Prime d'un poids inférieur à 22,6 kg ou si le vendeur propose une politique de retours supplémentaire.Vous demandez un retour pour tout autre motif (par exemple, vous avez changé d'avis, vous avez acheté la mauvaise taille). Entre 15 et 30 jours à compter de la réception : vous bénéficiez d’une politique de retours de 30 jours que les vendeurs tiers sont tenus de proposer.Remboursement du prix du produit par des vendeurs tiers Oui, à condition que l'article soit retourné dans le même état que lorsque vous l'avez reçu.Remboursement des frais de livraison par des vendeurs tiers Non, sauf si le vendeur propose une politique de retours supplémentaire plus favorable. Remboursement des frais de retour par des vendeurs tiers Non, sauf pour les articles des catégories Mode, pour les retours Prime d'un poids inférieur à 22,6 kg ou si le vendeur propose une politique de retours supplémentaire.
+Le vendeur a accepté d’effectuer un remboursement ou un remplacement, mais vous ne l’avez pas reçu non plus. Il vous a accordé seulement un remboursement partiel.
+Des frais supplémentaires vous ont été facturés (par exemple, des frais de douane pour une expédition dans l’UE) en plus du prix d’achat et des frais de livraison, et le vendeur ne vous les a pas remboursés.
+Vous souhaitiez retourner un article lourd et volumineux pesant 31,5 kg ou plus, ou dont le côté le plus long (une fois emballé) dépasse 175 cm, mais le vendeur n’a pas organisé le retrait à votre adresse de livraison (ou à un autre endroit convenu avec vous). Veuillez consulter la page Retourner les articles Marketplace lourds et volumineux pour plus de détails.
+Consultez la section Délai de traitement d’un remboursement au titre de la Garantie A à Z afin de savoir combien de temps il faut habituellement pour examiner et traiter les demandes.
+Outre la Garantie A à Z existante, Amazon couvre les dommages matériels ou corporels causés par les produits vendus sur Amazon. Pour plus d’informations, consultez la page Réclamations au titre de la Garantie A à Z pour les dommages matériels et corporels.
+Si votre problème n’est pas abordé ici, contactez-nous. Veuillez noter que nous ne pouvons pas garantir un remboursement tant que nous n'avons pas fini d'analyser le problème.
+Dans tous les cas, votre produit reste couvert par les garanties légales de conformité et/ou la garantie des vices cachés dont vous pourriez bénéficier, le cas échéant. Pour plus d’informations, consultez notre page Garanties légales et garanties commerciales d’Amazon
+Remarques relatives à la Garantie A à Z
+Si vous refusez la livraison de la commande et qu’il n’y a pas d’informations de suivi pour le retour, nous pouvons refuser votre demande de remboursement.
+Si vous annulez un paiement par prélèvement automatique pour l'article auprès de votre banque ou de la société émettrice de votre carte de crédit, vous ne pouvez pas demander de remboursement au titre de la Garantie A à Z.
+Si vous déposez un rejet de débit auprès de votre fournisseur de services de paiement ou de votre banque, vous ne pouvez pas demander de remboursement au titre de la Garantie A à Z.
+Cette garantie ne couvre pas les articles numériques, les services, les polices d'assurance ou de garantie achetées via Amazon, ni les instruments à valeur stockée.
+La Garantie A à Z s'applique uniquement lorsque vous achetez des articles vendus et expédiés par un vendeur tiers. Elle s'ajoute aux garanties légales dont les vendeurs tiers restent responsables. Pour plus d’informations, consultez notre page Garanties légales et garanties commerciales d’Amazon.
+Les articles achetés sur des sites tiers via Amazon Pay sont protégés par la Garantie A à Z d'Amazon. Pour plus d’informations, consultez la page d’aide d’Amazon Pay.
+Même si Amazon facilite les transactions effectuées sur le Marketplace Amazon, Amazon n'est ni l'acheteur ni le vendeur des articles du vendeur. Le contrat conclu lors de la vente de ces produits tiers n'est conclu qu'entre l'acheteur et le vendeur. Amazon n'est pas partie prenante de ce contrat. Que le vendeur de votre produit soit un vendeur professionnel ou un vendeur individuel, la Garantie A à Z Amazon s'appliquera.
+La Garantie A à Z est fournie par Amazon EU S.à r.l., 38 avenue John F. Kennedy, L-1855 Luxembourg, immatriculée au Luxembourg sous le n° B-101818.
+Contacter un vendeur Marketplace
+Contacter un vendeur après la commande
+Pour contacter le service client approprié après avoir passé votre commande :
+Accédez à Vos commandes.
+Cherchez votre article Marketplace.
+Sélectionnez l'option la plus pertinente pour votre requête. En fonction de votre type de commande et du statut de livraison, les options peuvent inclure :
+Problème avec la commande
+Obtenir un support produit
+Retourner un article
+Poser une question sur un produit
+
+
+Suivez les instructions à l'écran.
+En fonction de votre demande et du type de commande :
+Fourni avec la possibilité d'envoyer un e-mail au vendeur de Marketplace.
+Redirigé vers le service (par exemple, le centre de retours en ligne) ou vers les informations dont vous avez besoin.
+Mis en relation avec le service client Amazon.
+
+
+Contacter un vendeur avant de commander
+Pour envoyer un message de précommande à un vendeur Marketplace :
+Sélectionnez le nom du vendeur sur la page de produit.
+Sélectionnez Poser une question.
+Utilisez le chat de l’Assistant Messagerie des vendeurs pour envoyer votre message.
+Rechercher les réponses des vendeurs
+Les vendeurs répondent par e-mail dans les 48 heures.
+Recherchez et gérez toute la correspondance des vendeurs dans le Centre de messagerie, sous l’onglet Messages acheteur/vendeur.
+Si un vendeur ne répond pas dans les 48 heures, vous pouvez bénéficier de la Garantie A à Z. La Garantie A à Z couvre la livraison, l'état de l'article et les problèmes de retour.
+Besoin d'aide supplémentaire ?
+Trouver un colis manquant indiqué comme livré
+Obtenir un support produit
+Avis, commentaires et évaluations concernant les vendeurs
+Passer des commandes avec Alexa
+Dites : « Commande [article]. »
+Alexa ajoute une sélection de cet article à votre panier. Pour valider votre commande, suivez les instructions. Certains articles demandent à ce que la commande soit finalisée via l'application ou le site Web Amazon.
+Vous pouvez également dire « Passe la commande de mon panier Amazon » et suivre les invites pour passer votre commande.
+Si vous avez changé d’avis, dites : « Annule ma commande ».
+
+
+Comment configurer le réapprovisionnement intelligent
+Connectez d’abord votre appareil compatible avec Alexa avant d’activer le réapprovisionnement intelligent.
+Pour configurer le réapprovisionnement intelligent :
+Ouvrez l’application Alexa .
+Sélectionnez Appareils .
+Sélectionnez Tous les appareils.
+Sélectionnez votre appareil.
+Sélectionnez Paramètres de l’appareil .
+Sélectionnez Paramètres des notifications et du réapprovisionnement.
+Sélectionnez Quand mes provisions s'amenuisent.
+Sélectionnez Réapprovisionnement intelligent.
+Sélectionnez un produit approprié et suivez les instructions à l’écran.
+Rubriques d’aide connexes
+Connecter vos appareils connectés à Alexa
+Que sont les notifications de faible approvisionnement et le réapprovisionnement intelligent ?
+Comment désactiver les notifications de faible approvisionnement et le réapprovisionnement intelligent

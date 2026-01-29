@@ -1,0 +1,59 @@
+﻿Identifier une escroquerie
+Si vous avez reçu des communications suspectes ou si vous avez découvert un site Web suspect prétendant provenir d'Amazon, consultez les pages d'aide suivantes :
+Comment identifier les faux e-mails
+Comment identifier un faux texte/SMS
+Comment identifier un faux appel téléphonique
+Comment identifier un faux site Web
+Qu’est-ce qu’une escroquerie par usurpation d’identité ?
+Les escroqueries par usurpation d’identité se produisent lorsqu’un escroc se fait passer pour une organisation ou une personne digne de confiance, dans le but de voler votre argent ou vos informations personnelles. Les escroqueries par usurpation d’identité sont perpétrées de différentes manières : par téléphone, e-mail, texto ou message sur les réseaux sociaux. Les escrocs cherchent à vous inciter à effectuer un paiement quelconque, à partager des informations personnelles ou à leur donner accès à votre ordinateur. Pour cela, ils se font passer pour une organisation bien connue avec laquelle vous avez probablement déjà interagi.
+Comment identifier une escroquerie par usurpation d’identité ?
+Les escroqueries par usurpation d'identité peuvent être difficiles à identifier. Voici quelques signaux d'alarme indiquant une escroquerie par usurpation d'identité :
+Fausse urgence. Les fraudeurs tentent souvent de créer un sentiment d’urgence pour vous persuader de faire ce qu’ils demandent.
+Demande d’informations personnelles. Les fraudeurs peuvent tenter de vous convaincre de leur communiquer des informations personnelles par téléphone, par exemple votre adresse, des informations de paiement, des informations de connexion à votre compte ou des informations financières.
+Achats effectués en dehors d’Amazon. Les fraudeurs peuvent tenter de vous demander d’envoyer de l’argent hors du site Web ou de l’application mobile d’Amazon via un autre site tiers ou par virement bancaire.
+Paiement par cartes-cadeaux. Les fraudeurs peuvent vous demander d’acheter et de payer exclusivement par carte-cadeau. Ils peuvent demander le numéro de carte-cadeau, le code de réclamation ou le code PIN.
+Commande inattendue. Il se peut que vous receviez une notification concernant la commande ou la livraison d’un article que vous n’attendiez pas.
+Si vous avez reçu des communications suspectes prétendant provenir d’Amazon et que vous n’avez pas de compte chez nous, signalez-le-nous à l’adresse reportascam@amazon.com.
+Pour plus d’informations sur les tactiques d’escroquerie les plus courantes, accédez à Tendances en matière d’escroquerie.
+Signaler toute autre forme de cybermalveillance
+Pour toute autre forme de cybermalveillance (piratage de compte, usurpation d'identité, attaque informatique, etc.), connectez-vous sur https://17cyber.gouv.fr/ [Lien externe] afin de bénéficier d'une d'assistance en ligne.
+Le 17Cyber est un service public proposé par la Police nationale, la Gendarmerie nationale et Cybermalveillance.gouv.fr.
+Pour en savoir plus, consultez Des achats dignes de confiance sur Amazon.
+
+
+Protéger votre système
+Voici quelques conseils pour protéger votre compte :
+Si vous avez saisi votre mot de passe sur un site Web que vous soupçonnez d'être malveillant, accédez à l'aide avec le mot de passe et changez immédiatement votre mot de passe.
+Si vous avez saisi vos informations de paiement sur un site Web ou répondu à un e-mail que vous soupçonnez d'être malveillant, contactez immédiatement votre société émettrice de carte de crédit.
+Remarque : N'oubliez pas de mettre à jour ce mode de paiement sur votre compte Amazon par la suite.
+Si vous avez saisi vos informations de paiement sur un site Web ou répondu à un e-mail que vous soupçonnez d'être malveillant, contactez immédiatement votre société émettrice de carte de crédit.
+À titre de conseils supplémentaires sur la sécurité de votre compte, voici quelques façons de protéger votre système, vos appareils et votre réseau sans fil :
+Installez un logiciel antivirus ou anti-programme malveillant. Maintenez les logiciels de sécurité à jour en installant les mises à jour et les correctifs dès qu'ils sont disponibles.
+Remarque : Une fois l'installation terminée, exécutez une analyse complète de votre ordinateur.
+Mettez à jour votre système d'exploitation et les modules complémentaires nécessaires avec la dernière version disponible.
+Ne répondez jamais aux e-mails non sollicités. Le fait de répondre à un e-mail de hameçonnage et aux e-mails indésirables indique à l'expéditeur que l'adresse e-mail dont il dispose est correcte et peut être utilisée pour l'envoi de davantage d'e-mails de hameçonnage ou d'e-mails indésirables.
+Remarque : Si vous souhaitez vous désinscrire des communications Amazon, faites-le directement via notre site Web au lieu de cliquer sur un lien fourni dans un e-mail.
+Si vous pensez avoir détecté une vulnérabilité de sécurité touchant les services ou produits Amazon Retail, envoyez les détails de vos constatations via ce formulaire Web ou consultez la page Amazon Vulnerability Research Program sur le site Web HackerOne.
+Signaler une escroquerie
+Afin de vous donner les meilleurs conseils sur les mesures à prendre, veuillez sélectionner le lien approprié ci-dessous, en fonction de la manière dont vous avez répondu à la communication suspecte.
+J'ai partagé des informations bancaires
+J'ai partagé les informations de mon compte Amazon
+J'ai donné un accès à distance à mon ordinateur/mes appareils
+J'ai partagé d'autres informations
+Je n’ai partagé aucune information
+Signaler la réception de colis non sollicités
+Colis non sollicité reçu
+Signaler une fraude ou un abus concernant les cartes-cadeaux
+Arnaques courantes associées aux cartes-cadeaux
+Frais inconnus
+Pour plus d'informations, consultez la rubrique Frais inconnus
+Vous pouvez également signaler une tentative d'hameçonnage via le site Pharos [Lien externe].
+Si vous signalez une tentative de hameçonnage ou un e-mail non sollicité, il vous sera également demandé de transférer une copie de l'e-mail à Amazon.
+Pour signaler à Amazon un e-mail de hameçonnage ou un e-mail non sollicité, ouvrez un nouvel e-mail et joignez l'e-mail que vous soupçonnez d'être un faux. Envoyez l'e-mail à reportascam@amazon.com. Nous envoyer l'e-mail suspect en pièce jointe est le meilleur moyen d'en déterminer la provenance.
+Remarque : Amazon n'est pas en mesure de vous répondre personnellement lorsque vous écrivez à reportascam@amazon.com, mais vous pouvez recevoir un e-mail de confirmation automatique.
+Pour vous connecter en toute sécurité à votre compte Amazon, vous pouvez activer la clé dʼaccès pour utiliser simplement votre visage, votre empreinte digitale ou le code PIN que vous utilisez pour déverrouiller votre appareil. Les clés d'accès constituent un moyen pratique et sécurisé de vous connecter à votre compte Amazon sans utiliser de mot de passe.
+Si vous vous inquiétez pour la sécurité de votre compte, consultez la page d’aideProtéger votre système ou contactez-nous.
+Signaler toute autre forme de cybermalveillance
+Pour toute autre forme de cybermalveillance (piratage de compte, usurpation d'identité, attaque informatique, etc.), connectez-vous sur https://17cyber.gouv.fr/ [Lien externe] afin de bénéficier d'une d'assistance en ligne.
+Le 17Cyber est un service public proposé par la Police nationale, la Gendarmerie nationale et Cybermalveillance.gouv.fr.
+Pour en savoir plus, consultez Des achats dignes de confiance sur Amazon.

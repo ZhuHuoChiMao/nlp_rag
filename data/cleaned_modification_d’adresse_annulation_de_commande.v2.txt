@@ -1,0 +1,76 @@
+- 1) Statuts de commande (repères)
+S0 — Commande confirmée : paiement validé, pas encore en préparation. S1 — En préparation : picking/packing en cours à l’entrepôt. S2 — Étiquette créée : numéro de suivi attribué, colis prêt à être remis. S3 — Expédiée : colis remis au transporteur, en transit. S4 — En livraison / Livrée : distribution en cours ou terminée.
+
+- 2) Modification d’adresse : quand c’est possible
+2.1 Modification possible (fortement probable)
+- Statut S0 (Commande confirmée, non préparée) :
+OUI, modification possible dans la plupart des cas.
+
+2.2 Modification parfois possible (selon l’avancement)
+- Statut S1 (En préparation) :
+POSSIBLE si le colis n’est pas encore emballé/étiqueté. Nous tentons de bloquer la préparation, sans garantie.
+
+2.3 Modification généralement impossible via la boutique
+- Statut S2 (Étiquette créée) :
+En général NON, car l’étiquette est déjà générée. Selon le transporteur, une correction peut être impossible ou payante.
+- Statut S3 (Expédiée) et après :
+NON via la boutique. Il faut parfois passer par le transporteur (option de redirection) si disponible.
+
+- 3) Annulation de commande : quand c’est possible
+3.1 Annulation possible (fortement probable)
+- Statut S0 :
+OUI, annulation possible si la commande n’est pas lancée en préparation.
+
+3.2 Annulation incertaine
+- Statut S1 :
+POSSIBLE uniquement si nous parvenons à arrêter la préparation. Sinon, la commande partira et il faudra suivre la procédure de retour.
+
+3.3 Annulation impossible
+- Statut S2/S3/S4 :
+NON. Une fois étiquetée ou expédiée, l’annulation n’est plus possible. La solution est le refus de livraison (si autorisé) ou le retour après livraison selon les règles de retour.
+
+- 4) Comment faire (procédure standard)
+4.1 Pour modifier l’adresse
+
+Merci d’envoyer au service client, le plus tôt possible
+- Numéro de commande
+- Ancienne adresse (celle enregistrée) + NOUVELLE adresse complète
+(nom, rue, code postal, ville, pays)
+- Numéro de téléphone (important pour le transporteur)
+- Indication claire : “MODIFICATION D’ADRESSE URGENTE”
+
+4.2 Pour annuler la commande
+
+Merci d’envoyer
+- Numéro de commande
+- Motif (optionnel)
+- Indication claire : “ANNULATION URGENTE”
+NOTE: si l’annulation n’est plus possible, nous vous indiquerons la procédure de retour.
+
+- 5) Ce que nous faisons côté boutique (SOP interne simplifié)
+- Vérifier le statut de commande (S0–S4)
+- Si S0 : modifier/annuler immédiatement
+- Si S1 : tenter de bloquer la préparation (priorité élevée)
+- Si S2+ : informer des limites et proposer alternatives (transporteur/retour)
+
+- 6) Alternatives quand l’adresse ne peut plus être modifiée
+
+Selon le transporteur et le pays, options possibles (non garanties)
+- Redirection via le site/app du transporteur (si le suivi le permet)
+- Livraison en point relais / consigne (si proposé)
+- Reprogrammation de livraison
+- Refus de livraison (selon règles du transporteur) → retour expéditeur → remboursement après réception (selon politique de retour)
+NOTE: des frais peuvent s’appliquer selon le transporteur ; la disponibilité dépend du service de livraison.
+
+- 7) Règles sur les frais (par défaut)
+- Si l’adresse incorrecte est due au client :
+frais liés à une redirection, un second envoi ou un retour peuvent être à la charge du client.
+- Si l’erreur d’adresse est due à la boutique :
+nous prenons en charge les frais nécessaires pour corriger la situation.
+
+- 8) FAQ (réponses rapides)
+Q : Je viens de commander, puis-je changer mon adresse ? R : Oui, si la commande n’est pas encore en préparation. Envoyez-nous immédiatement le numéro de commande et la nouvelle adresse complète.
+
+Q : Puis-je annuler ma commande ? R : Oui si elle n’a pas encore été préparée. Si elle est déjà expédiée, l’annulation n’est plus possible ; il faudra suivre la procédure de retour après réception (ou refuser la livraison si le transporteur l’autorise).
+
+Q : La commande est déjà expédiée, que puis-je faire ? R : Nous ne pouvons plus modifier l’adresse. Vous pouvez essayer la redirection via le transporteur (si disponible) ou effectuer un retour après livraison selon notre politique.
