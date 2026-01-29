@@ -1,0 +1,16 @@
+# Core
+numpy>=1.24
+tqdm>=4.66
+
+# Retrieval (embeddings + vector index)
+sentence-transformers>=2.7.0
+faiss-cpu>=1.7.4
+
+# Generation (local LLM)
+transformers>=4.43.0
+accelerate>=0.33.0
+bitsandbytes>=0.43.0
+safetensors>=0.4.3
+
+# HF download/auth (useful for gated models like Llama)
+huggingface_hub>=0.24.0
