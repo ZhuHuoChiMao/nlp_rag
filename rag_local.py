@@ -200,10 +200,16 @@ def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str
     gen_ids = out[0][input_len:]
     text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
 
-    # 强制补上 Sources 行（避免模型忘记）
-    if "Sources:" not in text:
-        text = text.rstrip() + f"\nSources: {sources_line}"
-    return text if text else f'Je ne sais pas\nSources: {sources_line}'
+    # 1) 如果模型自己输出了 Sources:，把它和后面全部砍掉（防止把证据原文贴出来）
+    if "Sources:" in text:
+        text = text.split("Sources:", 1)[0].rstrip()
+
+    # 2) 无论如何都由代码统一追加 Sources（保证就是 top_k 的 sources_line）
+    if not text:
+        text = "Je ne sais pas"
+    text = text + f"\nSources: {sources_line}"
+    return text
+
 
 
 TEST_QUESTIONS = [
