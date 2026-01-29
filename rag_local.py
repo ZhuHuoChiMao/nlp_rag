@@ -238,6 +238,8 @@ def main():
 
     # llama model
     tokenizer, llm = load_local_llama(args.llama_model)
+    llm.generation_config.temperature = 1.0
+    llm.generation_config.top_p = 1.0
 
     # build/load index
     if args.rebuild:
@@ -267,12 +269,6 @@ def main():
         print(base)
 
         hits = retrieve(embedder, index, records, q, top_k=args.top_k)
-
-        print("\n--- RETRIEVAL (Top hits) ---")
-        for score, r in hits:
-            print(
-                f"- score={score:.4f} doc_id={r.get('doc_id')} section={r.get('section_id')} chunk={r.get('chunk_id')} title={r.get('title', '')}"
-            )
 
         context_blocks = [format_context(r) for _, r in hits]
         sources_line = ", ".join(format_source(r) for _, r in hits)
