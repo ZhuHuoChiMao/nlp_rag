@@ -1,9 +1,19 @@
 # Projet : RAG (Retrieval-Augmented Generation) – Assistant Service Client
 
+Les membres sont : 
+Yanhao Ren,Kunyao Zhou,LANDRY Simon
+
+Le dossier data/ contient les documents bruts (originaux).
+Le dossier data_with_doc_id/ contient les documents nettoyés et découpés en chunks (avec doc_id).
+NLP_rag.ipynb est un notebook prévu pour être exécuté sur Google Colab.
+ajouter_docid.py est un script qui ajoute un identifiant de document (doc_id).
+clean.py est le script de nettoyage des données.
+rag_local.py correspond au code principal (le “main”) du projet.
+
 Ce projet implémente un système RAG (Retrieval-Augmented Generation) pour répondre à des questions de service client à partir d’un corpus documentaire interne.  
 Le système compare :  
 Baseline : LLM seul (sans retrieval)  
-	RAG (avec extension) : génération augmentée par la recherche. Par défaut, le système utilise une recherche dense via FAISS et une génération conditionnée par des preuves ; l’extension ajoute une recherche hybride (Dense \+ BM25) afin d’améliorer la robustesse pour les requêtes riches en mots-clés.
+RAG (avec extension) : génération augmentée par la recherche. Par défaut, le système utilise une recherche dense via FAISS et une génération conditionnée par des preuves ; l’extension ajoute une recherche hybride (Dense \+ BM25) afin d’améliorer la robustesse pour les requêtes riches en mots-clés.
 
 # 1\. Dataset ：
 
@@ -56,7 +66,6 @@ transformers \+ bitsandbytes \+ torch : chargement Llama quantifié 4-bit (local
 
 
 # 5.Comment installer les dépendances et lancer:
-
 \!git clone https://github.com/ZhuHuoChiMao/nlp\_rag.git  
 %cd nlp\_rag  
 \!ls
