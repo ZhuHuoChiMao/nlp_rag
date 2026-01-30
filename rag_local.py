@@ -11,13 +11,12 @@ from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 
-
 from rank_bm25 import BM25Okapi
 import re
 
-# -----------------------------
-# Utils: load jsonl
-# -----------------------------
+from typing import List, Dict, Any, Tuple
+
+
 def load_jsonl_dir(data_dir: Path) -> List[Dict[str, Any]]:
     records = []
     for fp in sorted(data_dir.glob("*.jsonl")):
@@ -51,9 +50,6 @@ def build_text_for_embedding(r: Dict[str, Any]) -> str:
     return header + "\n" + r.get("text", "")
 
 
-# -----------------------------
-# Index build / load
-# -----------------------------
 def normalize_rows(x: np.ndarray) -> np.ndarray:
     norms = np.linalg.norm(x, axis=1, keepdims=True) + 1e-12
     return x / norms
@@ -84,9 +80,7 @@ def load_index(index_dir: Path) -> Tuple[faiss.Index, List[Dict[str, Any]], str]
     return index, meta["records"], meta.get("embed_model_name", "")
 
 
-# -----------------------------
-# Retrieval
-# -----------------------------
+
 def retrieve(
     embedder: SentenceTransformer,
     index: faiss.Index,
@@ -125,43 +119,130 @@ def build_bm25(records):
     corpus_tokens = [simple_tokenize(r.get("text","")) for r in records]
     return BM25Okapi(corpus_tokens)
 
-def minmax_norm(arr: np.ndarray):
-    if arr.size == 0:
-        return arr
-    mn, mx = float(arr.min()), float(arr.max())
-    if mx - mn < 1e-9:
-        return np.zeros_like(arr, dtype=np.float32)
-    return ((arr - mn) / (mx - mn)).astype(np.float32)
+def minmax_norm(arr, eps=1e-9):
+    arr = np.asarray(arr, dtype=np.float32)
+    mn = float(arr.min())
+    mx = float(arr.max())
+    if mx - mn < eps:
+        return np.full_like(arr, 0.5, dtype=np.float32)
+    return (arr - mn) / (mx - mn)
+
+
+FR_STOP = {
+    "le","la","les","un","une","des","du","de","d","l","au","aux",
+    "et","ou","mais","donc","or","ni","car",
+    "que","qui","quoi","dont","où",
+    "est","suis","es","sommes","êtes","sont","été",
+    "ce","cet","cette","ces","ça",
+    "je","tu","il","elle","on","nous","vous","ils","elles",
+    "mon","ma","mes","ton","ta","tes","son","sa","ses","notre","votre","leur","leurs",
+    "pour","par","avec","sans","sur","sous","dans","en","à","a",
+    "plus","moins","très","trop","pas","ne",
+}
+
+def token_set(text: str):
+    toks = re.findall(r"[A-Za-zÀ-ÿ0-9]+", text.lower())
+    toks = [t for t in toks if len(t) >= 3 and t not in FR_STOP]
+    return set(toks)
+
+
+def overlap_ratio(q: str, ctx: str) -> float:
+    qtok = token_set(q)
+    if not qtok:
+        return 0.0
+    ctok = token_set(ctx)
+    inter = qtok & ctok
+    if len(inter) == 0:
+        return 0.0
+    return len(inter) / len(qtok)
+
+
+def has_enough_overlap(q: str, contexts, min_overlap: float = 0.15, check_top: int = 1) -> bool:
+    for ctx in contexts[:check_top]:
+        if overlap_ratio(q, ctx) >= min_overlap:
+            return True
+    return False
+
+
+def should_answer_with_rag(fused_scores, min_best=0.25, min_gap=0.03):
+    if fused_scores is None or len(fused_scores) == 0:
+        return False
+    best = float(fused_scores[0])
+    second = float(fused_scores[1]) if len(fused_scores) > 1 else 0.0
+    if best < min_best:
+        return False
+    if (best - second) < min_gap:
+        return False
+    return True
+
+def size_question_gate(question: str, hits) -> bool:
+    q = question.lower()
+    if "taille" not in q and "cm" not in q and "kg" not in q:
+        return True
+
+    evidence_text = " ".join((r.get("title","") + " " + r.get("text","")) for _, r in hits).lower()
+
+    if "taille" not in evidence_text:
+        return False
+    if ("cm" not in evidence_text) and ("kg" not in evidence_text) and (not re.search(r"\b\d{2,3}\b", evidence_text)):
+        return False
+    return True
+
 
 def retrieve_hybrid(embedder, index, records, bm25, query: str, top_k: int = 5, alpha: float = 0.6):
-    # 1) dense topN（先取大一点候选，比如 top_k*5）
     cand_k = max(top_k * 5, top_k)
-    dense_hits = retrieve(embedder, index, records, query, top_k=cand_k)  # 你原来的函数:contentReference[oaicite:4]{index=4}
+    dense_hits = retrieve(embedder, index, records, query, top_k=cand_k)
+    if not dense_hits:
+        return []
+
     dense_scores = np.array([s for s, _ in dense_hits], dtype=np.float32)
-
-    # 2) BM25 对“所有文档”打分，然后只取 dense 候选对应的 bm25 分数（更省事）
     bm25_scores_all = np.array(bm25.get_scores(simple_tokenize(query)), dtype=np.float32)
-
-    # 找出 dense 候选的 idx：你现在 dense_hits 只有 record，没有原始 idx，所以用 records.index 会很慢
-    # 更推荐：在 records 里预先加一个 _rid 索引（build/load 后做一次）
-    # 假设 records 每条都有 r["_rid"]
     bm25_scores = np.array([bm25_scores_all[r["_rid"]] for _, r in dense_hits], dtype=np.float32)
 
-    # 3) 分数归一化 + 融合
-    dense_n = minmax_norm(dense_scores)
-    bm25_n = minmax_norm(bm25_scores)
-    fused = alpha * dense_n + (1 - alpha) * bm25_n
+    fused = alpha * minmax_norm(dense_scores) + (1 - alpha) * minmax_norm(bm25_scores)
 
-    # 4) 取融合后 top_k
     order = np.argsort(-fused)[:top_k]
-    out = [(float(fused[i]), dense_hits[i][1]) for i in order]
-    return out
+    top_hits = [(float(fused[i]), dense_hits[i][1]) for i in order]
+    top_fused = [float(fused[i]) for i in order]
+
+    contexts = [(r.get("title","") + " " + r.get("text","")) for _, r in top_hits]
+
+    if not should_answer_with_rag(top_fused, min_best=0.25, min_gap=0.03):
+        return []
+    if not has_enough_overlap(query, contexts, min_overlap=0.15, check_top=2):
+        return []
+
+    if not size_question_gate(query, top_hits):
+        return []
+
+    if not evidence_keyword_gate(query, top_hits):
+        return []
+
+    return top_hits
 
 
 
-# -----------------------------
-# Llama load + generation
-# -----------------------------
+
+def evidence_keyword_gate(question: str, hits) -> bool:
+    q = question.lower()
+
+    if any(k in q for k in ["laver", "lavage", "nettoyer", "entretien", "laine", "pull"]):
+        evidence_text = " ".join((r.get("title","") + " " + r.get("text","")) for _, r in hits).lower()
+
+        must = ["laine", "lavage", "laver", "entretien", "nettoyer", "programme", "délicat", "main", "température", "sécher", "eau"]
+        hit_cnt = sum(1 for m in must if m in evidence_text)
+
+        if hit_cnt < 2:
+            return False
+        if ("laine" not in evidence_text) and ("laver" not in evidence_text) and ("lavage" not in evidence_text):
+            return False
+        return True
+
+    return True
+
+
+
+
 def pick_dtype():
     if torch.cuda.is_available():
         major, _minor = torch.cuda.get_device_capability(0)
@@ -180,7 +261,7 @@ def load_local_llama(model_id="meta-llama/Llama-3.2-1B-Instruct"):
     )
 
     tok = AutoTokenizer.from_pretrained(model_id, use_fast=True)
-    # 避免 pad token 报 warning/问题
+
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
 
@@ -208,7 +289,7 @@ def generate_baseline_llama(tokenizer, model, question: str) -> str:
     with torch.no_grad():
         out = model.generate(
             **inputs,
-            max_new_tokens=160,
+            max_new_tokens=250,
             do_sample=False,
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
@@ -220,14 +301,26 @@ def generate_baseline_llama(tokenizer, model, question: str) -> str:
 
 def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str], sources_line: str) -> str:
     context = "\n\n---\n\n".join(context_blocks)
-
+    r'''
     prompt = (
         "Tu es un assistant service client.\n"
         "Réponds UNIQUEMENT avec les preuves ci-dessous.\n"
         "Si la réponse n'est pas dans les preuves, dis \"Je ne sais pas\".\n"
         "Ne recopie pas les preuves.\n"
+        "Ne réponds qu'à la question posée. N'ajoute aucune autre question/réponse.\n"
+        "Interdiction d'écrire \"Q:\", \"A:\" ou \"R:\".\n"
         "Interdiction d’ajouter des exemples, des pays ou des détails non présents dans les preuves.\n"
         "Termine par une ligne EXACTE: Sources: (doc_id:section_id:chunk_id), ...\n\n"
+        f"Preuves:\n{context}\n\nQuestion:\n{question}\n\nRéponse:\n"
+    )
+    '''
+    prompt = (
+        "Tu es un assistant service client.\n"
+        "Réponds UNIQUEMENT avec les preuves ci-dessous.\n"
+        "Si la réponse n'est pas dans les preuves, dis \"Je ne sais pas\".\n"
+        "Ne recopie pas les preuves.\n"
+        "Réponds en 2 phrases maximum.\n"
+        "Sans liste numérotée, sans puces.\n"
         f"Preuves:\n{context}\n\nQuestion:\n{question}\n\nRéponse:\n"
     )
 
@@ -238,7 +331,7 @@ def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str
     with torch.no_grad():
         out = model.generate(
             **inputs,
-            max_new_tokens=220,
+            max_new_tokens=250,
             do_sample=False,
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
@@ -247,30 +340,56 @@ def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str
     gen_ids = out[0][input_len:]
     text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
 
+    text = re.sub(r"(?im)^\s*(Q|A)\s*:\s*", "", text)
+    text = re.sub(r"(?im)^\s*R\s*:\s*", "", text)
+    text = re.split(r"\n\s*(Q\s*:|R\s*:|J'ai besoin d')", text, maxsplit=1)[0].strip()
+    text = re.sub(r"\n\s*\d+\.\s*$", "", text).strip()
+
+    def clip_chars(t: str, max_chars: int = 320) -> str:
+        t = t.strip()
+        if len(t) <= max_chars:
+            return t
+        cut_text = t[:max_chars]
+        cut_pos = max(
+            cut_text.rfind("\n"),
+            cut_text.rfind("."),
+            cut_text.rfind("!"),
+            cut_text.rfind("?"),
+            cut_text.rfind(";"),
+            cut_text.rfind(":"),
+        )
+
+        if cut_pos >= 80:
+            cut_text = cut_text[:cut_pos + 1]
+        else:
+            cut_text = cut_text.rsplit(" ", 1)[0]
+
+        return cut_text.strip()
+
+    text = clip_chars(text, 360)
+
     if "Sources:" in text:
         text = text.split("Sources:", 1)[0].rstrip()
 
     if not text:
         text = "Je ne sais pas"
-    text = text + f"\nSources: {sources_line}"
+    text = text
     return text
 
 
 
 TEST_QUESTIONS = [
-    "Qu’est-ce qu’une facture (standard) ?",
-    "Qu’est-ce qu’une facture commerciale (commercial invoice) ?",
-    "À quoi sert une facture commerciale pour la douane / l’export ?",
-    "Quels documents la boutique peut-elle fournir : facture, facture commerciale, bon cadeau ?",
-    "Comment demander une facture PDF au service client ? Quelles informations faut-il envoyer ?",
-    "Quelles informations sont nécessaires pour une facture (particulier) vs une facture (professionnel) ?",
-    "Puis-je obtenir un bon cadeau / reçu sans prix ? Quand faut-il le demander ?",
+    "Qu’est-ce qu’une facture standard ?",
+    "Qu’est-ce qu’une facture commerciale ?",
+    "Puis-je obtenir un reçu sans prix ou bon cadeau ? Quand dois-je le demander ?",
+    "Je fais 170 cm et 60 kg, je prends quelle taille ?",
+    "Comment laver mon nouveau pull en laine ?",
+    "Je souhaite retourner l'article.",
+    "Qu'est-ce que l'amour?",
 ]
 
 
-# -----------------------------
-# Main
-# -----------------------------
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data_dir", type=str, default="data_with_doc_id", help="Directory containing jsonl files")
@@ -284,15 +403,12 @@ def main():
     data_dir = Path(args.data_dir)
     index_dir = Path(args.index_dir)
 
-    # embedding model
     embedder = SentenceTransformer(args.embed_model)
 
-    # llama model
     tokenizer, llm = load_local_llama(args.llama_model)
     llm.generation_config.temperature = 1.0
     llm.generation_config.top_p = 1.0
 
-    # build/load index
     if args.rebuild:
         records = load_jsonl_dir(data_dir)
         if not records:
@@ -315,7 +431,6 @@ def main():
         print(f"[WARN] Index was built with embed_model={built_embed_model}, now using {args.embed_model}")
 
 
-    # run 7 questions
     for i, q in enumerate(TEST_QUESTIONS, start=1):
         print("\n" + "=" * 80)
         print(f"[Q{i}] {q}")
@@ -324,22 +439,19 @@ def main():
         base = generate_baseline_llama(tokenizer, llm, q)
         print(base)
 
-        threshold = 0.4
 
-        hits = retrieve_hybrid(embedder, index, records, bm25, q, top_k=args.top_k, alpha=0.6)
-
-        # 低置信度：不引用、不做RAG回答，直接转人工
-        top1 = hits[0][0] if hits else -1.0
-        if top1 < threshold:
-            print("\n--- RAG (With sources) ---")
-            print("此问题较为复杂，正在帮你转为人工客服。")
-            continue
+        hits = retrieve_hybrid(embedder, index, records, bm25, q, top_k=args.top_k,alpha=0.6)
 
         print("\n--- RETRIEVAL (Top hits) ---")
+        if not hits:
+            print("(no reliable evidence)")
+            print("\n--- RAG (With sources) ---")
+            print("Il s'agit d'un problème complexe qui est en cours de transfert au service client.")
+            continue
+
         for score, r in hits:
             print(
-                f"- score={score:.4f} doc_id={r.get('doc_id')} section={r.get('section_id')} chunk={r.get('chunk_id')} title={r.get('title', '')}"
-            )
+                f"- score={score:.4f} doc_id={r.get('doc_id')} section={r.get('section_id')} chunk={r.get('chunk_id')} title={r.get('title', '')}")
 
 
         context_blocks = [format_context(r) for _, r in hits]
@@ -349,7 +461,6 @@ def main():
         rag_ans = generate_rag_llama(tokenizer, llm, q, context_blocks, sources_line)
         print(rag_ans)
 
-    print("\nDone.")
 
 
 if __name__ == "__main__":

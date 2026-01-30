@@ -14,3 +14,6 @@ safetensors>=0.4.3
 
 # HF download/auth (useful for gated models like Llama)
 huggingface_hub>=0.34.0,<1.0
+
+#rank-bm25
+rank-bm25>=0.2.2

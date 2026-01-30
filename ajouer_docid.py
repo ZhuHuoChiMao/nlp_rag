@@ -1,9 +1,8 @@
 import json
 from pathlib import Path
 
-# 1) 修改这里：你的 jsonl 文件所在目录
-INPUT_DIR = Path("data")              # 例如：Path("/mnt/data/data")
-OUTPUT_DIR = Path("data_with_doc_id") # 输出目录
+INPUT_DIR = Path("data")
+OUTPUT_DIR = Path("data_with_doc_id")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -20,7 +19,7 @@ count_added = 0
 
 for fp in sorted(INPUT_DIR.glob("*.jsonl")):
     count_files += 1
-    doc_id = fp.stem  # 文件名作为 doc_id（不含扩展名）
+    doc_id = fp.stem
 
     out_fp = OUTPUT_DIR / fp.name
     with fp.open("r", encoding="utf-8") as fin, out_fp.open("w", encoding="utf-8") as fout:
@@ -33,12 +32,10 @@ for fp in sorted(INPUT_DIR.glob("*.jsonl")):
             if obj is None:
                 continue
 
-            # 2) 只在没有 doc_id 时补（避免覆盖你之后手动设定的 doc_id）
             if "doc_id" not in obj:
                 obj["doc_id"] = doc_id
                 count_added += 1
 
-            # 可选：保留来源文件名，调试很方便
             if "source_file" not in obj:
                 obj["source_file"] = fp.name
 
