@@ -7,6 +7,13 @@ OUTPUT_DIR = Path("data_with_doc_id")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def safe_json_load(line: str, file_path: Path, line_no: int):
+    """
+    Tente de parser une ligne JSON de manière sécurisée.
+
+    - Si la ligne est un JSON valide, la fonction retourne l'objet Python (dict / list, etc.).
+    - Si le parsing échoue (JSON mal formé), la fonction affiche un avertissement contenant
+      le nom du fichier et le numéro de ligne, puis retourne None.
+    """
     try:
         return json.loads(line)
     except json.JSONDecodeError as e:

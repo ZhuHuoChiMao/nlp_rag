@@ -15,6 +15,7 @@ OVERLAP_CHARS = 180
 
 
 def normalize_whitespace(text: str) -> str:
+    """Nettoie et normalise les espaces et retours à la ligne."""
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = text.replace("\u00A0", " ").replace("\u200B", "")
     text = "\n".join(line.rstrip() for line in text.split("\n"))
@@ -24,6 +25,7 @@ def normalize_whitespace(text: str) -> str:
 
 
 def unify_bullets(text: str) -> str:
+    """Uniformise les puces et la numérotation (ex: •, *, 1., (1) -> formats stables)."""
     lines = text.split("\n")
     out = []
     for line in lines:
@@ -47,10 +49,7 @@ def unify_bullets(text: str) -> str:
 
 
 def normalize_note_tip_line(line: str) -> Tuple[str, str]:
-    """
-    return (block_type, normalized_line)
-    block_type: "note" | "tip" | "text"
-    """
+    """Détecte 'Remarque/Conseil' et les normalise en 'NOTE:' / 'TIP:'."""
     s = line.strip()
     m = re.match(r"^(Remarque|Conseil)\s*:?\s*(.*)$", s, flags=re.IGNORECASE)
     if not m:
@@ -73,6 +72,7 @@ FR_BODY_START = {
 }
 
 def looks_like_title(line: str) -> bool:
+    """Heuristique : décide si une ligne ressemble à un titre de section."""
     s = line.strip()
     if not s:
         return False
@@ -110,6 +110,7 @@ STEP_LEAD_RE = re.compile(
 )
 
 def sentence_split_to_bullets(text: str) -> List[str]:
+    """Découpe un texte en phrases courtes pour en faire des items (puces)."""
     s = re.sub(r"\s+", " ", text.strip())
     if not s:
         return []
@@ -124,6 +125,7 @@ def sentence_split_to_bullets(text: str) -> List[str]:
     return out
 
 def post_fix_tip_note_and_enumerations(text: str) -> str:
+    """Post-traitement : fusion NOTE/TIP, transforme certaines énumérations en puces."""
     import re
 
     lines = text.split("\n")
@@ -202,6 +204,7 @@ def post_fix_tip_note_and_enumerations(text: str) -> str:
 
 
 def merge_wrapped_lines_smart(text: str) -> List[Dict]:
+    """Fusionne les lignes coupées et produit des blocs typés (titre, paragraphe, puce, note...)."""
     lines = text.split("\n")
     blocks: List[Dict] = []
 
@@ -302,6 +305,7 @@ def merge_wrapped_lines_smart(text: str) -> List[Dict]:
 
 
 def blocks_to_sections(blocks: List[Dict]) -> List[Dict]:
+    """Regroupe les blocs en sections, séparées par les titres."""
     sections: List[Dict] = []
     current = {"title": "UNTITLED", "blocks": []}
 
@@ -323,6 +327,7 @@ def blocks_to_sections(blocks: List[Dict]) -> List[Dict]:
 
 
 def blocks_to_text(blocks: List[Dict]) -> str:
+    """Reconstruit un texte à partir d'une liste de blocs."""
     parts = []
     for b in blocks:
         if b["type"] == "blank":
@@ -334,6 +339,7 @@ def blocks_to_text(blocks: List[Dict]) -> str:
     return txt
 
 def chunk_blocks(blocks: List[Dict], max_chars: int, overlap_chars: int) -> List[List[Dict]]:
+    """Découpe les blocs en chunks de taille max avec chevauchement (overlap)."""
     chunks: List[List[Dict]] = []
     cur: List[Dict] = []
     cur_len = 0
@@ -374,6 +380,7 @@ def chunk_blocks(blocks: List[Dict], max_chars: int, overlap_chars: int) -> List
 
 
 def main():
+    """Lit, nettoie, structure le texte, puis exporte en .txt propre et en .jsonl chunké."""
     if not INPUT_PATH.exists():
         raise FileNotFoundError(f"Input not found: {INPUT_PATH}")
 

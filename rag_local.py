@@ -18,6 +18,7 @@ from typing import List, Dict, Any, Tuple
 
 
 def load_jsonl_dir(data_dir: Path) -> List[Dict[str, Any]]:
+    """Charge tous les fichiers .jsonl d’un dossier et retourne une liste d’enregistrements nettoyés."""
     records = []
     for fp in sorted(data_dir.glob("*.jsonl")):
         with fp.open("r", encoding="utf-8") as f:
@@ -42,6 +43,7 @@ def load_jsonl_dir(data_dir: Path) -> List[Dict[str, Any]]:
 
 
 def build_text_for_embedding(r: Dict[str, Any]) -> str:
+    """Construit le texte d’embedding en ajoutant un en-tête (doc_id/section/chunk/title) + le contenu."""
     doc_id = r.get("doc_id", "")
     title = r.get("title", "")
     section_id = r.get("section_id", "")
@@ -51,11 +53,13 @@ def build_text_for_embedding(r: Dict[str, Any]) -> str:
 
 
 def normalize_rows(x: np.ndarray) -> np.ndarray:
+    """Normalise chaque vecteur (L2) pour utiliser la similarité cosinus via produit scalaire."""
     norms = np.linalg.norm(x, axis=1, keepdims=True) + 1e-12
     return x / norms
 
 
 def build_faiss_index(embeddings: np.ndarray) -> faiss.Index:
+    """Crée un index FAISS IndexFlatIP et y ajoute les embeddings normalisés."""
     d = embeddings.shape[1]
     index = faiss.IndexFlatIP(d)  # cosine via inner product on normalized vecs
     index.add(embeddings.astype(np.float32))
@@ -63,6 +67,7 @@ def build_faiss_index(embeddings: np.ndarray) -> faiss.Index:
 
 
 def save_index(index_dir: Path, index: faiss.Index, records: List[Dict[str, Any]], embed_model_name: str):
+    """Sauvegarde l’index FAISS et les métadonnées (records + nom du modèle d’embedding)."""
     index_dir.mkdir(parents=True, exist_ok=True)
     faiss.write_index(index, str(index_dir / "faiss.index"))
     with (index_dir / "meta.pkl").open("wb") as f:
@@ -70,6 +75,7 @@ def save_index(index_dir: Path, index: faiss.Index, records: List[Dict[str, Any]
 
 
 def load_index(index_dir: Path) -> Tuple[faiss.Index, List[Dict[str, Any]], str]:
+    """Charge l’index FAISS et les métadonnées depuis un dossier."""
     index_path = index_dir / "faiss.index"
     meta_path = index_dir / "meta.pkl"
     if not index_path.exists() or not meta_path.exists():
@@ -88,6 +94,7 @@ def retrieve(
     query: str,
     top_k: int = 5,
 ) -> List[Tuple[float, Dict[str, Any]]]:
+    """Encode la requête, recherche dans FAISS et retourne les top-k résultats (score + record)."""
     q_emb = embedder.encode([query], convert_to_numpy=True, show_progress_bar=False)
     q_emb = normalize_rows(q_emb).astype(np.float32)
     scores, idxs = index.search(q_emb, top_k)
@@ -99,6 +106,7 @@ def retrieve(
 
 
 def format_context(r: Dict[str, Any]) -> str:
+    """Formate un bloc de contexte (id source + titre + texte) pour l’injection dans le prompt."""
     return (
         f"({r.get('doc_id')}:{r.get('section_id')}:{r.get('chunk_id')}) "
         f"{r.get('title','')}\n"
@@ -107,19 +115,22 @@ def format_context(r: Dict[str, Any]) -> str:
 
 
 def format_source(r: Dict[str, Any]) -> str:
+    """Formate une référence source courte (doc_id:section_id:chunk_id)."""
     return f"({r.get('doc_id')}:{r.get('section_id')}:{r.get('chunk_id')})"
 
 def simple_tokenize(text: str):
+    """Tokenise simplement (minuscule + nettoyage) pour BM25."""
     text = text.lower()
-    # 保留字母数字，其他变空格
     text = re.sub(r"[^a-z0-9À-ÿ]+", " ", text)
     return text.split()
 
 def build_bm25(records):
+    """Construit un modèle BM25 sur les textes des records."""
     corpus_tokens = [simple_tokenize(r.get("text","")) for r in records]
     return BM25Okapi(corpus_tokens)
 
 def minmax_norm(arr, eps=1e-9):
+    """Applique une normalisation min-max sur un tableau de scores."""
     arr = np.asarray(arr, dtype=np.float32)
     mn = float(arr.min())
     mx = float(arr.max())
@@ -141,12 +152,14 @@ FR_STOP = {
 }
 
 def token_set(text: str):
+    """Extrait un ensemble de tokens utiles (sans stopwords) pour mesurer le chevauchement."""
     toks = re.findall(r"[A-Za-zÀ-ÿ0-9]+", text.lower())
     toks = [t for t in toks if len(t) >= 3 and t not in FR_STOP]
     return set(toks)
 
 
 def overlap_ratio(q: str, ctx: str) -> float:
+    """Calcule le ratio de chevauchement entre tokens de la question et du contexte."""
     qtok = token_set(q)
     if not qtok:
         return 0.0
@@ -158,6 +171,7 @@ def overlap_ratio(q: str, ctx: str) -> float:
 
 
 def has_enough_overlap(q: str, contexts, min_overlap: float = 0.15, check_top: int = 1) -> bool:
+    """Vérifie si au moins un des premiers contextes a un chevauchement suffisant avec la question."""
     for ctx in contexts[:check_top]:
         if overlap_ratio(q, ctx) >= min_overlap:
             return True
@@ -165,6 +179,7 @@ def has_enough_overlap(q: str, contexts, min_overlap: float = 0.15, check_top: i
 
 
 def should_answer_with_rag(fused_scores, min_best=0.25, min_gap=0.03):
+    """Décide d’activer le RAG selon le meilleur score et l’écart avec le second."""
     if fused_scores is None or len(fused_scores) == 0:
         return False
     best = float(fused_scores[0])
@@ -176,6 +191,7 @@ def should_answer_with_rag(fused_scores, min_best=0.25, min_gap=0.03):
     return True
 
 def size_question_gate(question: str, hits) -> bool:
+    """Garde-fou pour les questions de taille (taille/cm/kg) : exige des preuves chiffrées pertinentes."""
     q = question.lower()
     if "taille" not in q and "cm" not in q and "kg" not in q:
         return True
@@ -190,6 +206,7 @@ def size_question_gate(question: str, hits) -> bool:
 
 
 def retrieve_hybrid(embedder, index, records, bm25, query: str, top_k: int = 5, alpha: float = 0.6):
+    """Récupération hybride : fusionne scores dense (FAISS) et BM25, puis applique des filtres de fiabilité."""
     cand_k = max(top_k * 5, top_k)
     dense_hits = retrieve(embedder, index, records, query, top_k=cand_k)
     if not dense_hits:
@@ -224,6 +241,7 @@ def retrieve_hybrid(embedder, index, records, bm25, query: str, top_k: int = 5, 
 
 
 def evidence_keyword_gate(question: str, hits) -> bool:
+    """Garde-fou par mots-clés : refuse le RAG si les preuves ne contiennent pas assez de termes attendus."""
     q = question.lower()
 
     if any(k in q for k in ["laver", "lavage", "nettoyer", "entretien", "laine", "pull"]):
@@ -244,6 +262,7 @@ def evidence_keyword_gate(question: str, hits) -> bool:
 
 
 def pick_dtype():
+    """Choisit un dtype adapté (bfloat16 si GPU récent, sinon float16)."""
     if torch.cuda.is_available():
         major, _minor = torch.cuda.get_device_capability(0)
         if major >= 8:
@@ -252,6 +271,7 @@ def pick_dtype():
 
 
 def load_local_llama(model_id="meta-llama/Llama-3.2-1B-Instruct"):
+    """Charge le modèle LLaMA local en 4-bit (BitsAndBytes) et retourne (tokenizer, model)."""
     dtype = pick_dtype()
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -276,6 +296,7 @@ def load_local_llama(model_id="meta-llama/Llama-3.2-1B-Instruct"):
 
 
 def generate_baseline_llama(tokenizer, model, question: str) -> str:
+    """Génère une réponse sans RAG (assistant service client, réponse concise)."""
     prompt = (
         "Tu es un assistant service client.\n"
         "Réponds de manière concise.\n\n"
@@ -300,20 +321,8 @@ def generate_baseline_llama(tokenizer, model, question: str) -> str:
 
 
 def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str], sources_line: str) -> str:
+    """Génère une réponse RAG basée uniquement sur les preuves, puis nettoie/borne la sortie."""
     context = "\n\n---\n\n".join(context_blocks)
-    r'''
-    prompt = (
-        "Tu es un assistant service client.\n"
-        "Réponds UNIQUEMENT avec les preuves ci-dessous.\n"
-        "Si la réponse n'est pas dans les preuves, dis \"Je ne sais pas\".\n"
-        "Ne recopie pas les preuves.\n"
-        "Ne réponds qu'à la question posée. N'ajoute aucune autre question/réponse.\n"
-        "Interdiction d'écrire \"Q:\", \"A:\" ou \"R:\".\n"
-        "Interdiction d’ajouter des exemples, des pays ou des détails non présents dans les preuves.\n"
-        "Termine par une ligne EXACTE: Sources: (doc_id:section_id:chunk_id), ...\n\n"
-        f"Preuves:\n{context}\n\nQuestion:\n{question}\n\nRéponse:\n"
-    )
-    '''
     prompt = (
         "Tu es un assistant service client.\n"
         "Réponds UNIQUEMENT avec les preuves ci-dessous.\n"
@@ -391,6 +400,7 @@ TEST_QUESTIONS = [
 
 
 def main():
+    """Point d’entrée : build/load index, init BM25, teste des questions en mode baseline et RAG."""
     ap = argparse.ArgumentParser()
     ap.add_argument("--data_dir", type=str, default="data_with_doc_id", help="Directory containing jsonl files")
     ap.add_argument("--index_dir", type=str, default="rag_index", help="Directory to save/load FAISS index")
