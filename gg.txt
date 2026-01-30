@@ -12,9 +12,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 
 
-from rank_bm25 import BM25Okapi
-import re
-
 # -----------------------------
 # Utils: load jsonl
 # -----------------------------
@@ -114,49 +111,6 @@ def format_context(r: Dict[str, Any]) -> str:
 
 def format_source(r: Dict[str, Any]) -> str:
     return f"({r.get('doc_id')}:{r.get('section_id')}:{r.get('chunk_id')})"
-
-def simple_tokenize(text: str):
-    text = text.lower()
-    # 保留字母数字，其他变空格
-    text = re.sub(r"[^a-z0-9À-ÿ]+", " ", text)
-    return text.split()
-
-def build_bm25(records):
-    corpus_tokens = [simple_tokenize(r.get("text","")) for r in records]
-    return BM25Okapi(corpus_tokens)
-
-def minmax_norm(arr: np.ndarray):
-    if arr.size == 0:
-        return arr
-    mn, mx = float(arr.min()), float(arr.max())
-    if mx - mn < 1e-9:
-        return np.zeros_like(arr, dtype=np.float32)
-    return ((arr - mn) / (mx - mn)).astype(np.float32)
-
-def retrieve_hybrid(embedder, index, records, bm25, query: str, top_k: int = 5, alpha: float = 0.6):
-    # 1) dense topN（先取大一点候选，比如 top_k*5）
-    cand_k = max(top_k * 5, top_k)
-    dense_hits = retrieve(embedder, index, records, query, top_k=cand_k)  # 你原来的函数:contentReference[oaicite:4]{index=4}
-    dense_scores = np.array([s for s, _ in dense_hits], dtype=np.float32)
-
-    # 2) BM25 对“所有文档”打分，然后只取 dense 候选对应的 bm25 分数（更省事）
-    bm25_scores_all = np.array(bm25.get_scores(simple_tokenize(query)), dtype=np.float32)
-
-    # 找出 dense 候选的 idx：你现在 dense_hits 只有 record，没有原始 idx，所以用 records.index 会很慢
-    # 更推荐：在 records 里预先加一个 _rid 索引（build/load 后做一次）
-    # 假设 records 每条都有 r["_rid"]
-    bm25_scores = np.array([bm25_scores_all[r["_rid"]] for _, r in dense_hits], dtype=np.float32)
-
-    # 3) 分数归一化 + 融合
-    dense_n = minmax_norm(dense_scores)
-    bm25_n = minmax_norm(bm25_scores)
-    fused = alpha * dense_n + (1 - alpha) * bm25_n
-
-    # 4) 取融合后 top_k
-    order = np.argsort(-fused)[:top_k]
-    out = [(float(fused[i]), dense_hits[i][1]) for i in order]
-    return out
-
 
 
 # -----------------------------
@@ -307,10 +261,6 @@ def main():
         print(f"[OK] Index built. records={len(records)} -> {index_dir.resolve()}")
 
     index, records, built_embed_model = load_index(index_dir)
-    for i, r in enumerate(records):
-        r["_rid"] = i
-    bm25 = build_bm25(records)
-
     if built_embed_model and built_embed_model != args.embed_model:
         print(f"[WARN] Index was built with embed_model={built_embed_model}, now using {args.embed_model}")
 
@@ -326,7 +276,7 @@ def main():
 
         threshold = 0.4
 
-        hits = retrieve_hybrid(embedder, index, records, bm25, q, top_k=args.top_k, alpha=0.6)
+        hits = retrieve(embedder, index, records, q, top_k=args.top_k)
 
         # 低置信度：不引用、不做RAG回答，直接转人工
         top1 = hits[0][0] if hits else -1.0
