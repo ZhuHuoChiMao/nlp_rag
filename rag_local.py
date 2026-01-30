@@ -180,6 +180,7 @@ def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str
         "Réponds UNIQUEMENT avec les preuves ci-dessous.\n"
         "Si la réponse n'est pas dans les preuves, dis \"Je ne sais pas\".\n"
         "Ne recopie pas les preuves.\n"
+        "Interdiction d’ajouter des exemples, des pays ou des détails non présents dans les preuves.\n"
         "Termine par une ligne EXACTE: Sources: (doc_id:section_id:chunk_id), ...\n\n"
         f"Preuves:\n{context}\n\nQuestion:\n{question}\n\nRéponse:\n"
     )
@@ -200,11 +201,9 @@ def generate_rag_llama(tokenizer, model, question: str, context_blocks: List[str
     gen_ids = out[0][input_len:]
     text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
 
-    # 1) 如果模型自己输出了 Sources:，把它和后面全部砍掉（防止把证据原文贴出来）
     if "Sources:" in text:
         text = text.split("Sources:", 1)[0].rstrip()
 
-    # 2) 无论如何都由代码统一追加 Sources（保证就是 top_k 的 sources_line）
     if not text:
         text = "Je ne sais pas"
     text = text + f"\nSources: {sources_line}"
@@ -265,6 +264,7 @@ def main():
     if built_embed_model and built_embed_model != args.embed_model:
         print(f"[WARN] Index was built with embed_model={built_embed_model}, now using {args.embed_model}")
 
+
     # run 7 questions
     for i, q in enumerate(TEST_QUESTIONS, start=1):
         print("\n" + "=" * 80)
@@ -274,7 +274,23 @@ def main():
         base = generate_baseline_llama(tokenizer, llm, q)
         print(base)
 
+        threshold = 0.4
+
         hits = retrieve(embedder, index, records, q, top_k=args.top_k)
+
+        # 低置信度：不引用、不做RAG回答，直接转人工
+        top1 = hits[0][0] if hits else -1.0
+        if top1 < threshold:
+            print("\n--- RAG (With sources) ---")
+            print("此问题较为复杂，正在帮你转为人工客服。")
+            continue
+
+        print("\n--- RETRIEVAL (Top hits) ---")
+        for score, r in hits:
+            print(
+                f"- score={score:.4f} doc_id={r.get('doc_id')} section={r.get('section_id')} chunk={r.get('chunk_id')} title={r.get('title', '')}"
+            )
+
 
         context_blocks = [format_context(r) for _, r in hits]
         sources_line = ", ".join(format_source(r) for _, r in hits)
