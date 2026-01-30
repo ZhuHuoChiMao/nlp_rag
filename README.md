@@ -3,12 +3,12 @@
 Les membres sont : 
 Yanhao Ren,Kunyao Zhou,LANDRY Simon
 
-Le dossier data/ contient les documents bruts (originaux).
-Le dossier data_with_doc_id/ contient les documents nettoyés et découpés en chunks (avec doc_id).
-NLP_rag.ipynb est un notebook prévu pour être exécuté sur Google Colab.
-ajouter_docid.py est un script qui ajoute un identifiant de document (doc_id).
-clean.py est le script de nettoyage des données.
-rag_local.py correspond au code principal (le “main”) du projet.
+Le dossier data/ contient les documents bruts (originaux).   
+Le dossier data_with_doc_id/ contient les documents nettoyés et découpés en chunks (avec doc_id).   
+NLP_rag.ipynb est un notebook prévu pour être exécuté sur Google Colab.   
+ajouter_docid.py est un script qui ajoute un identifiant de document (doc_id).   
+clean.py est le script de nettoyage des données.   
+rag_local.py correspond au code principal (le “main”) du projet.   
 
 Ce projet implémente un système RAG (Retrieval-Augmented Generation) pour répondre à des questions de service client à partir d’un corpus documentaire interne.  
 Le système compare :  
