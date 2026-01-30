@@ -48,11 +48,12 @@ transformers \+ bitsandbytes \+ torch : chargement Llama quantifié 4-bit (local
 
 # 4.Démo
 
-\!\[Demo\](images/image1.png)  
-\!\[Demo\](images/image2.png)  
-\!\[Demo\](images/image3.png)  
-\!\[Demo\](images/image4.png)  
-\!\[Demo\](images/image5.png)
+![Demo](images/image1.png)
+![Demo](images/image2.png)
+![Demo](images/image3.png)
+![Demo](images/image4.png)
+![Demo](images/image5.png)
+
 
 # 5.Comment installer les dépendances et lancer:
 
